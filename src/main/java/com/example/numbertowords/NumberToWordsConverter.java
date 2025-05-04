@@ -29,6 +29,8 @@ public class NumberToWordsConverter {
             return units[number / 100] + " hundred" + (number % 100 != 0 ? " " + convertHelper(number % 100) : "");
         } else if (number < 1_000_000) {
             return convertHelper(number / 1000) + " thousand" + (number % 1000 != 0 ? " " + convertHelper(number % 1000) : "");
+        } else if (number < 1_000_000_000) {
+            return convertHelper(number / 1000000) + " million" + (number % 1000000 != 0 ? " " + convertHelper(number % 1000000) : "");
         } else {
             return "number too large";
         }
